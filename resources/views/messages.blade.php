@@ -52,7 +52,7 @@
     @endforeach
     <div >{{ $messages->links() }}</div>
     @include('modal.URLForMessage')
-    @include('modal.editMessage')
+{{--    @include('modal.editMessage')--}}
 
 @endif
 
