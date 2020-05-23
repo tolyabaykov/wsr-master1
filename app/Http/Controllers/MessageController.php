@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events;
 use App\Message;
 use App\Theme;
 use Illuminate\Http\Request;
@@ -21,6 +22,7 @@ class MessageController extends Controller
             return view('messages', compact('messages'));
         }
         return view('theme', ['theme' =>$theme, 'messages' => $messages]);
+
     }
 
 
@@ -47,10 +49,15 @@ class MessageController extends Controller
         return view('showMessage', ['message' => $message]);
     }
 
-    public function update(Request $request, Message $message)
+
+        public function update( $id, Request $request)
     {
-        return $message->update($request->all());
+        $messege = Message::find($id);
+        $messege ->fill($request->all());
+        $messege->save();
+        return back();
     }
+
 
     public function destroy(Message $message)
     {

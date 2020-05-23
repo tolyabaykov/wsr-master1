@@ -16,7 +16,7 @@
                                     <div class="row ml-1">
                                         <small>id: {{ $message->id }}</small>&nbsp&nbsp&nbsp&nbsp
                                         <small>Создано: {{date("d.m.Y",strtotime($message->created_at))}}</small>&nbsp&nbsp&nbsp&nbsp
-                                        <small>Изменено:</small>
+                                        <small id="">Изменено:</small>
                                     </div>
                                     <div class="row mt-4 ml-1">
                                         {{ $message->message }}
@@ -31,12 +31,14 @@
                                     </div>
                                     <br>
                                     <div class="float-right">
-                                        <a href="#" data-toggle="modal" data-target="#modal_04" data-content="" title="Ответить">
+                                        <a href="#" data-toggle="modal" data-target="#modal_04" data-content="{{ $message->id }}" title="Ответить">
                                             <i class="fa fa-reply text-secondary"></i>
                                         </a>
                                     </div><br>
+
                                     <div class="float-right">
-                                        <a href="#" data-toggle="modal" data-target="#modal_04" data-content="" title="Редактировать">
+
+                                        <a href="#" data-toggle="modal" data-target="#modal_04" data-content="{{ $message }}" title="Редактировать">
                                             <i class="fa fa-pencil-square-o text-secondary"></i>
                                         </a>
                                     </div>
@@ -52,7 +54,7 @@
     @endforeach
     <div >{{ $messages->links() }}</div>
     @include('modal.URLForMessage')
-{{--    @include('modal.editMessage')--}}
+    @include('modal.editMessage')
 
 @endif
 
