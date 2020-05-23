@@ -1,0 +1,49 @@
+body{
+    background:linear-gradient(45deg, #EECFBA, #C5DDE8) ;
+    color:#2c3e50;
+}
+nav.navbar{
+    background: linear-gradient(45deg, #3490dc, #7952b3);
+
+}
+.card-header{
+    background: linear-gradient(30deg, #3490dc, #7952b3);
+    color:white;
+}
+.card{
+    background: #f5f5f5;
+}
+.btn-my {
+    background: #3490dc;
+    color: white;
+}
+.btn-my:hover {
+    background: #3490dc;
+    color: white;
+}
+.btn-outline-my {
+    background:#3490dc;
+    color: #3490dc;
+}
+
+.btn-outline-my:hover {
+    background: #3490dc;
+    opacity: 0.8;
+    color: #3490dc;
+}
+.pointer {
+    cursor: pointer;
+}
+.btn-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 19px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 16px;
+}
+
+
+
+
