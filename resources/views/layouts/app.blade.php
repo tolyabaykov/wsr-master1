@@ -6,8 +6,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="/public/favicon.png" type="image/png">
     <title>{{ ( 'EVENT-club') }}</title>
+
+{{--    Iamages favicon--}}
+    <link rel="shortcut icon" href="/public/favicon.png" type="image/png">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -57,7 +59,9 @@
                             <a class=" nav-item" href="{{ route('notification') }}"><i class="fa fa-bell" aria-hidden="true" style="font-size: 25px; color: #EECFBA;
    "></i> <span
                                     class="badge badge-secondary badge-pill float-right" style="background: #FF4500;">
-                                                                       6
+
+                                                                       {{count(auth()->user()->notifications)}}
+
                                                                     </span></a>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events;
 use App\Message;
+use App\Notifications\NotiToUser;
 use App\Roles;
 use App\Status;
 use App\Theme;
@@ -51,7 +52,9 @@ class HomeController extends Controller
                 $request->all()
             )
         );
+
         return redirect()->back();
+
     }
 // Вывод сообщений
     public function showMessages(Request $request, $id){

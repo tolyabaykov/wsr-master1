@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events;
+use App\Notifications\NotiToUser;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -38,7 +39,10 @@ class AdminController extends Controller
                 $data->manager = $request->input($event->id);
                 $data->save();
             }
+
+            auth()->user()->notify(new NotiToUser());
         }
+
         return redirect()->back();
     }
 
@@ -47,6 +51,7 @@ class AdminController extends Controller
         $event = Events::find($id);
         $event ->fill($request->all());
         $event->save();
+        auth()->user()->notify(new NotiToUser());
         return back();
     }
 
