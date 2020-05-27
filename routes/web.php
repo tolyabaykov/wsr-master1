@@ -51,10 +51,10 @@ Route::post('events/{events_id}/themes', 'HomeController@store')->name('create_t
 Route::get('themes/{themes_id}', 'MessageController@showMessages')->name('show_messages')->middleware('auth'); // Список сообщений темы
 
 Route::get('themes_ajax/{themes_id}', 'MessageController@ajaxMessages')->name('show_messages_ajax')->middleware('auth'); // Список сообщений темы только для запроса ajax
-Route::patch('theme/update/{id}', 'MessageController@update')->name('update')->middleware('auth'); // Редактирование
+Route::patch('themes/messages/{id}/update', 'MessageController@update')->name('update')->middleware('auth'); // Редактирование сообщения
 
 Route::Resource('messages', 'MessageController');
-
+//notification
 
 
 

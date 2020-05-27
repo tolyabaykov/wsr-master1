@@ -9,15 +9,16 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('update',['id' =>$message->id])}}" method="post" class="form-horizontal" id="edit_form">
+                <form action="{{--{{route('update',['id' =>$message->id])}}--}}" method="post" class="form-horizontal" id="edit_message_form">
                     @csrf
                     @method('PATCH')
                     <div class="form-group row">
-                        <label for="name"
+                        <label for="message"
                                class="col-md-4 col-form-label text-md-right">{{ __('Сообщение') }}</label>
                         <div class="col-md-6">
+
                             <textarea  rows="1" class="form-control mb-3" type="text" id="message" name="message"
-                                      required>{{ $message->message}}</textarea>
+                                      required></textarea>
 
                         </div>
                     </div>
