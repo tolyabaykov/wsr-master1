@@ -39,10 +39,14 @@ class AdminController extends Controller
                 $data->manager = $request->input($event->id);
                 $data->save();
             }
+            $users = User::all();
+            foreach ($users as $user) {
+                if ($user->id ==  $event->manager){
+                    $user->notify(new NotiToUser($user));
+                }
 
-            auth()->user()->notify(new NotiToUser());
         }
-
+        }
         return redirect()->back();
     }
 
@@ -51,8 +55,16 @@ class AdminController extends Controller
         $event = Events::find($id);
         $event ->fill($request->all());
         $event->save();
-        auth()->user()->notify(new NotiToUser());
-        return back();
+
+
+        $users = User::all();
+        foreach ($users as $user) {
+            if ($user->id ==  $event->manager){
+                $user->notify(new NotiToUser($user));
+                return back();
+            }
+
+        }
     }
 
 

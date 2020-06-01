@@ -63,7 +63,7 @@ $(document).ready(function () {
 
         console.log(old_message);
 
-        $(this).find('#edit_message_form').attr('action',   id + '/update');
+        $(this).find('#edit_message_form').attr('action',   'themes/messages/'+ id + '/update');
         $(this).find('#message').val(old_message);
         // $(this).find('#date').val(old_date);
     });

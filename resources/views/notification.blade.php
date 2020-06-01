@@ -17,11 +17,13 @@
 
                                 <div class="row justify-content-center ">
                                     <div class="col-md-12">
-                                        @foreach(auth()->user()->notifications as $notification)
 
-                                            {{$notification->data['warning']}}
+                                            @foreach(auth()->user()->unreadNotifications as $notification)
+{{$notification->data['name']}}
 
                                         @endforeach
+
+
 
                                     </div>
                                 </div>

@@ -68,7 +68,7 @@ class NotiToUser extends Notification
     public function toDatabase ($notifiable)
     {
         return [
-           'warning' => 'вы были назначены менеджером',
+             $notifiable,
 
         ];
     }
