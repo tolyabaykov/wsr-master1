@@ -43,7 +43,9 @@
                                         </a>
                                     </div>
                                 </div>
-
+@foreach($answers as $answer)
+    {{$answer->body}}
+                                @endforeach
                             </div>
                         </li>
                     </ul>
