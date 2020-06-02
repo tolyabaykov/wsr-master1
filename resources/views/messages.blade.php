@@ -21,6 +21,17 @@
                                     <div class="row mt-4 ml-1">
                                         {{ $message->message }}
                                     </div>
+                                    {{--                                ответ--}}
+                                    <ul class="list-group">
+                                        @foreach($message->answers as $answer)
+                                            <li class="list-group-item row mt-4 ml-1">
+                                                {{$answer->body}}
+                                            </li>
+
+
+
+                                        @endforeach
+                                    </ul>
                                 </div>
                                 <div class="col col-md-1 ">
                                     <div class="float-right">
@@ -31,7 +42,7 @@
                                     </div>
                                     <br>
                                     <div class="float-right">
-                                        <a href="#" data-toggle="modal" data-target="#modal_04" data-content="{{ $message->id }}" title="Ответить">
+                                        <a href="#" data-toggle="modal" data-target="#modal_07" data-content="{{ $message}}" title="Ответить">
                                             <i class="fa fa-reply text-secondary"></i>
                                         </a>
                                     </div><br>
@@ -43,9 +54,7 @@
                                         </a>
                                     </div>
                                 </div>
-@foreach($answers as $answer)
-    {{$answer->body}}
-                                @endforeach
+
                             </div>
                         </li>
                     </ul>
@@ -57,6 +66,7 @@
     <div >{{ $messages->links() }}</div>
     @include('modal.URLForMessage')
     @include('modal.editMessage')
+    @include('modal.AnswerMessage')
 
 @endif
 

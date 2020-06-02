@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use App\Events;
 use App\Message;
 use App\Theme;
@@ -42,6 +43,23 @@ class MessageController extends Controller
         $messages = Theme::find($request->theme_id)->messages()->paginate(5);
         return view('messages', ['messages' =>$messages]);
 
+    }
+//ответ на сообщение
+    public function store_answer(Request $request, $id)
+    {
+
+
+//        $id->addAnswer($request['body']);
+        $messages = Message::find($id); //Почему то без этого не работает
+        Answer::create(
+            [
+                'body' => $request['body'],
+                'user_id' => auth()->user()->id,
+                'messages_id' =>$messages->id,
+
+            ]
+);
+        return redirect()->back();
     }
 
     public function show(Message $message)

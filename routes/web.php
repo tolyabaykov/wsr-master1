@@ -48,6 +48,9 @@ Route::post('events/{events_id}/themes', 'HomeController@store')->name('create_t
 
 //Messages
 
+
+
+Route::post('themes/{id}/answer', 'MessageController@store_answer')->name('store_answer')->middleware('auth'); // создание ответа на сообщение
 Route::get('themes/{themes_id}', 'MessageController@showMessages')->name('show_messages')->middleware('auth'); // Список сообщений темы
 
 Route::get('themes_ajax/{themes_id}', 'MessageController@ajaxMessages')->name('show_messages_ajax')->middleware('auth'); // Список сообщений темы только для запроса ajax
