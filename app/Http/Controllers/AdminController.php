@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Events;
-use App\Notifications\NotiToUser;
+use App\Notifications\NotiToAddManager;
+use App\Notifications\NotiToDeleteManager;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -39,13 +40,20 @@ class AdminController extends Controller
                 $data->manager = $request->input($event->id);
                 $data->save();
             }
+//            уведомления на добавление и удаление менеджера
             $users = User::all();
             foreach ($users as $user) {
                 if ($user->id ==  $event->manager){
-                    $user->notify(new NotiToUser($user));
+                    $user->notify(new NotiToAddManager($user));
+                    $user->notify(new NotiToDeleteManager($user));
                 }
 
         }
+//            foreach ($users as $user){
+//                if ($user->id==$event->manager){
+//                    $user->notify(new NotiToDeleteManager($user));
+//                }
+//            }
         }
         return redirect()->back();
     }
@@ -56,15 +64,21 @@ class AdminController extends Controller
         $event ->fill($request->all());
         $event->save();
 
-
+//            уведомления на добавление и удаление менеджера
         $users = User::all();
         foreach ($users as $user) {
             if ($user->id ==  $event->manager){
-                $user->notify(new NotiToUser($user));
+                $user->notify(new NotiToAddManager($user));
+                $user->notify(new NotiToDeleteManager($user));
                 return back();
             }
 
         }
+//        foreach ($users as $user){
+//            if ($user->id == $event->manager){
+//                $user->notify(new NotiToDeleteManager($user));
+//            }
+//        }
     }
 
 

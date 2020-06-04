@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('store_answer',['id' =>$message->id])}}" method="post" class="form-horizontal" >
+                <form action="{{route('store_answer',['id' =>$message->id])}}" method="post" class="form-horizontal">
                     @csrf
                     @method('post')
                     <div class="form-group row">
@@ -18,8 +18,8 @@
                                class="col-md-4 col-form-label text-md-right">{{ __('Ответ') }}</label>
                         <div class="col-md-6">
 
-                            <textarea id="body" name="body"  rows="1" class="form-control mb-3" type="text"
-                                       required></textarea>
+                            <textarea id="body" name="body" rows="1" class="form-control mb-3" type="text"
+                                      required></textarea>
 
                         </div>
                     </div>

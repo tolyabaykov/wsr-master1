@@ -6,6 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Answer extends Model
 {
+
+    protected $fillable = [
+        'body','user_id','messages_id',
+    ];
+
+    protected $hidden = [
+        'created_at', 'updated_at',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function Message()
     {
         return $this->belongsTo(Message::class);

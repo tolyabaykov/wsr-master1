@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events;
 use App\Message;
-use App\Notifications\NotiToUser;
+use App\Notifications\NotiToAddManager;
 use App\Roles;
 use App\Status;
 use App\Theme;

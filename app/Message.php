@@ -23,9 +23,10 @@ class Message extends Model
     {
         return $this->hasMany(Answer::class, 'messages_id');
     }
-    public function addAnswer($body)
-    {
-$this->answers()->create(compact('body'));
 
-    }
+//   public function addAnswer($body)
+//    {
+//$this->answers()->create(compact('body'));
+//
+//    }
 }

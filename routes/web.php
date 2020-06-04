@@ -18,8 +18,7 @@ Auth::routes();
 Route::get('/success', function () {
     return view('success');
 });
-Route::get('/notification', function (){
-    return view('notification');})->name('notification');
+
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
@@ -49,7 +48,6 @@ Route::post('events/{events_id}/themes', 'HomeController@store')->name('create_t
 //Messages
 
 
-
 Route::post('themes/{id}/answer', 'MessageController@store_answer')->name('store_answer')->middleware('auth'); // создание ответа на сообщение
 Route::get('themes/{themes_id}', 'MessageController@showMessages')->name('show_messages')->middleware('auth'); // Список сообщений темы
 
@@ -59,5 +57,7 @@ Route::patch('themes/messages/{id}/update', 'MessageController@update')->name('u
 Route::Resource('messages', 'MessageController');
 //notification
 
-
+Route::get('/markAsRead',function(){
+    auth()->user()->unreadNotifications->markAsRead();
+});
 

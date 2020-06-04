@@ -56,15 +56,27 @@
                                 </li>
                             @endif
                         @else
-                            <a class=" nav-item" href="{{ route('notification') }}"><i class="fa fa-bell" aria-hidden="true" style="font-size: 25px; color: #EECFBA;
-   "></i> <span
-                                    class="badge badge-secondary badge-pill float-right" style="background: #FF4500;">
+                            <li class="nav-item dropleft" id="markasread" onclick="markNotificationAsRead('{{count(auth()->user()->unreadNotifications)}}')">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-bell"  style="font-size: 25px; color: #EECFBA;"></i>
+                                    <span class="badge badge-secondary badge-pill float-right" style="background: #FF4500;">{{count(auth()->user()->unreadNotifications)}}</span>
+                                </a>
 
-                                                                       {{count(auth()->user()->notifications)}}
+                                <ul class="dropdown-menu" role="menu" style="width: 350px"  >
 
-                                                                    </span>
+                                    @foreach(auth()->user()->unreadNotifications as $notification)
+                                        {{--                                        @include('layouts.partials.notification.'.class_basename($notification->type))--}}
+                                        <li class="nav-item dropdown" > {{$notification->data['noti']}} {{$notification->data['n\u043etif']}} <span class="badge badge-secondary badge-pill float-right" style="background: red;">{{ date("d.m.Y H:i", strtotime($notification->created_at)) }}</span></li>
+                                    @endforeach
 
-                            </a>
+                                </ul>
+
+                            </li>
+
+
+
+
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

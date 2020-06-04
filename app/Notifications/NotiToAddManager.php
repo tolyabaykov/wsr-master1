@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class NotiToUser extends Notification
+class NotiToAddManager extends Notification
 {
     use Queueable;
 
@@ -68,7 +68,7 @@ class NotiToUser extends Notification
     public function toDatabase ($notifiable)
     {
         return [
-             $notifiable,
+             'noti' => 'Вы были назначены менеджером!',
 
         ];
     }
