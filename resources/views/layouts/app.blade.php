@@ -65,8 +65,8 @@
                                 <ul class="dropdown-menu" role="menu" style="width: 350px"  >
 
                                     @foreach(auth()->user()->unreadNotifications as $notification)
-                                        {{--                                        @include('layouts.partials.notification.'.class_basename($notification->type))--}}
-                                        <li class="nav-item dropdown" > {{$notification->data['noti']}} {{$notification->data['n\u043etif']}} <span class="badge badge-secondary badge-pill float-right" style="background: red;">{{ date("d.m.Y H:i", strtotime($notification->created_at)) }}</span></li>
+
+                                        <li class="nav-item dropdown" > {{$notification->data['noti']}}  <span class="badge badge-light" style="background: red; color: white">{{ date("d.m.Y H:i", strtotime($notification->created_at)) }}</span></li>
                                     @endforeach
 
                                 </ul>

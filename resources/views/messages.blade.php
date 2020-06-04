@@ -21,17 +21,8 @@
                                     <div class="row mt-4 ml-1">
                                         {{ $message->message }}
                                     </div>
-                                    {{--                                ответ--}}
-                                    <ul class="list-group">
-                                        @foreach($message->answers as $answer)
-                                            <li class="list-group-item row mt-4 ml-1">
-                                                {{$answer->body}}
-                                            </li>
 
 
-
-                                        @endforeach
-                                    </ul>
                                 </div>
                                 <div class="col col-md-1 ">
                                     <div class="float-right">
@@ -57,6 +48,35 @@
 
                             </div>
                         </li>
+                        {{--                                        вывод ответа на сообщение--}}
+                        @foreach($message->answers as $answer)
+                        <li class="list-group-item " >
+                            <div class="row">
+                                <div class="col-md-2 text-center">  </div>
+                                <div class="col col-md-2 text-center">
+                                    <h6> {{ $answer->user->last_name }} {{ $answer->user->name }} </h6>
+                                    <img class="img-thumbnail " style="border-radius: 50%;" src="{{ $answer->user->photo }}"
+                                         alt="{{ $answer->user->name }} ">
+
+                                </div>
+                                <div class="col col-md-7">
+                                    <div class="row ml-1">
+                                        <small>id: {{ $answer->id }}</small>&nbsp&nbsp&nbsp&nbsp
+                                        <small>Создано: {{date("d.m.Y",strtotime($answer->created_at))}}</small>&nbsp&nbsp&nbsp&nbsp
+                                        <small id="">Изменено:</small>
+                                    </div>
+                                    <div class="row mt-4 ml-1">
+                                        {{$answer->body}}
+                                    </div>
+
+{{--                                    <ul class="list-group">--}}
+{{--                                            <li class="list-group-item row mt-4 ml-1">--}}
+{{--                                            </li>--}}
+{{--                                    </ul>--}}
+                                </div>
+                            </div>
+                        </li>
+                        @endforeach
                     </ul>
                 </div>
 
