@@ -55,6 +55,7 @@ Route::get('themes_ajax/{themes_id}', 'MessageController@ajaxMessages')->name('s
 Route::patch('themes/messages/{id}/update', 'MessageController@update')->name('update')->middleware('auth'); // Редактирование сообщения
 
 Route::Resource('messages', 'MessageController');
+
 //notification
 
 Route::get('/markAsRead',function(){

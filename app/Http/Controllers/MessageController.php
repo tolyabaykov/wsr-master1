@@ -87,7 +87,7 @@ class MessageController extends Controller
         return view('showMessage', ['message' => $message]);
     }
 
-
+//редактирование сообщения
     public function update($id, Request $request)
     {
         $messeges = Message::find($id);

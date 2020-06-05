@@ -55,7 +55,7 @@
                                 <div class="col-md-2 text-center">  </div>
                                 <div class="col col-md-2 text-center">
                                     <h6> {{ $answer->user->last_name }} {{ $answer->user->name }} </h6>
-                                    <img class="img-thumbnail " style="border-radius: 50%;" src="{{ $answer->user->photo }}"
+                                    <img class="img-thumbnail " style="border-radius: 50%;" src="{{ $answer->user->photo }} "
                                          alt="{{ $answer->user->name }} ">
 
                                 </div>

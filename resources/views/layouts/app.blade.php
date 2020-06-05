@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand navbar-dark flex-column flex-md-row shadow-lg bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/images/logo.png" height="70" alt="">
+                    <img src="/images/logo.png" height="70" alt="Информационная система Event-club">
 {{--                    {{ config('app.name', 'Информационная система Event-club') }}--}}
 {{--                    {{ ( 'Информационная система ') }}--}}
                 </a>

@@ -63,7 +63,7 @@ $(document).ready(function () {
     //
     //     console.log(old_message);
     //
-    //     $(this).find('#edit_message_form').attr('action',   id );
+    //     $(this).find('#edit_message_form').attr('action',   id ); загвостка в пути для формы
     //     $(this).find('#message').val(old_message);
     //     // $(this).find('#date').val(old_date);
     // });
@@ -179,7 +179,7 @@ $(document).on('show.bs.modal', '#URLForMessage', function (event) {
 });
 
 
-
+//выводит только непрочитанные уведомления
 function markNotificationAsRead(notificationCount) {
     if(notificationCount !=='0'){
         $.get('/markAsRead');
