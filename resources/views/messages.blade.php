@@ -51,9 +51,9 @@
                         {{--                                        вывод ответа на сообщение--}}
                         @foreach($message->answers as $answer)
                         <li class="list-group-item " >
-                            <div class="row">
+                            <div class="row" >
                                 <div class="col-md-2 text-center">  </div>
-                                <div class="col col-md-2 text-center">
+                                <div class="col col-md-2 text-center" style="border-left: solid 1px ">
                                     <h6> {{ $answer->user->last_name }} {{ $answer->user->name }} </h6>
                                     <img class="img-thumbnail " style="border-radius: 50%;" src="{{ $answer->user->photo }} "
                                          alt="{{ $answer->user->name }} ">
@@ -69,10 +69,6 @@
                                         {{$answer->body}}
                                     </div>
 
-{{--                                    <ul class="list-group">--}}
-{{--                                            <li class="list-group-item row mt-4 ml-1">--}}
-{{--                                            </li>--}}
-{{--                                    </ul>--}}
                                 </div>
                             </div>
                         </li>

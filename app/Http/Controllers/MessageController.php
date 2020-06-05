@@ -39,7 +39,7 @@ class MessageController extends Controller
         return ($messages);
     }
 
-
+//создание сообщений
     public function store(Request $request)
     {
         $users=User::all();
@@ -48,7 +48,7 @@ class MessageController extends Controller
                 'user_id' => auth()->user()->id
             ] + $request->all());
         $messages = Theme::find($request->theme_id)->messages()->paginate(5);
-
+//создание уведомления
         foreach ($users as $user){
             if ($user->id==$theme->owner_id){
                 $user->notify(new NotiToMessage($user));
@@ -73,6 +73,7 @@ class MessageController extends Controller
 
             ]
         );
+        //создание уведомления
         $users=User::all();
         foreach ($users as $user){
             if ($user->id==$messages->user_id){
@@ -96,7 +97,7 @@ class MessageController extends Controller
         return redirect()->back();
     }
 
-
+//удаление сообщения
     public function destroy(Message $message)
     {
         return $message->delete();

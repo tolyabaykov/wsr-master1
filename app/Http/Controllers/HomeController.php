@@ -39,7 +39,7 @@ class HomeController extends Controller
         //      $events = DB::table('events')->get(); //Это второй способ обращения к базе данных. В этом случае добавляем: use Illuminate\Support\Facades\DB;
         return view('home', ['events' => $events, 'users' => $users, 'statuses' => $statuses, 'roles' => $roles, 'themes' => $themes]);
     }
-
+//создание event
     public function store(Request $request, $id)
     {
         $events = Events::find($id); //Почему то без этого не работает

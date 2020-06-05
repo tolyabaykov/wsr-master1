@@ -18,19 +18,19 @@ class AdminController extends Controller
         //      $events = DB::table('events')->get(); //Это второй способ обращения к базе данных. В этом случае добавляем: use Illuminate\Support\Facades\DB;
         return view('admin.index', ['events' => $events, 'users' => $users ]);
     }
-
+//создание event
     public function store(Request $request)
     {
         Events::create($request->all());
         return redirect()->back();
     }
-
+//удаление event
     public function destroy($id)
     {
         Events::destroy($id);
         return back();
     }
-
+//редактирование event в форме
     public function update_all(Request $request)
     {
         $events = Events::all();
@@ -57,7 +57,7 @@ class AdminController extends Controller
         }
         return redirect()->back();
     }
-
+//редактирование event в модальном окне
     public function update(Request $request, $id)
     {
         $event = Events::find($id);

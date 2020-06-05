@@ -13,7 +13,7 @@ class Events extends Model
     protected $hidden = [
         'created_at', 'updated_at',
     ];
-
+//связь с темой один ко многим
     public function themes() {
         return $this->hasMany(Theme::class);
     }
