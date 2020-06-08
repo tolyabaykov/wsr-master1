@@ -103,5 +103,4 @@ class MessageController extends Controller
         return $message->delete();
     }
 
-
 }

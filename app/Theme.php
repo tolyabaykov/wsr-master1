@@ -22,5 +22,9 @@ class Theme extends Model
     {
         return $this->belongsTo(Events::class);
     }
+    //связь с типом темы один ко многим
+    public function theme_accesses() {
+        return $this->hasMany(theme_access::class);
+    }
 
 }

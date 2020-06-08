@@ -20,11 +20,12 @@
                             <textarea  rows="1" class="form-control mb-3" type="text" id="message" name="message"
                                       required></textarea>
 
+
                         </div>
                     </div>
 
                     <div class="modal-footer">
-                        <button class="btn btn-my">Редактировать</button>
+                        <button class="btn btn-my" id="btnEditMessage">Редактировать</button>
                     </div>
                 </form>
 

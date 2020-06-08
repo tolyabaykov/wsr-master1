@@ -18,7 +18,7 @@
                                         <small>Создано: {{date("d.m.Y",strtotime($message->created_at))}}</small>&nbsp&nbsp&nbsp&nbsp
                                         <small id="">Изменено:</small>
                                     </div>
-                                    <div class="row mt-4 ml-1">
+                                    <div class="row mt-4 ml-1" id="messages">
                                         {{ $message->message }}
                                     </div>
 
@@ -38,7 +38,7 @@
                                         </a>
                                     </div><br>
 
-                                    <div class="float-right">
+                                    <div class="float-right" id="Edit">
 
                                         <a href="#" data-toggle="modal" data-target="#modal_04" data-content="{{ $message }}" title="Редактировать">
                                             <i class="fa fa-pencil-square-o text-secondary"></i>
@@ -48,12 +48,12 @@
 
                             </div>
                         </li>
-                        {{--                                        вывод ответа на сообщение--}}
+                        {{--                                   вывод ответа на сообщение--}}
                         @foreach($message->answers as $answer)
                         <li class="list-group-item " >
                             <div class="row" >
                                 <div class="col-md-2 text-center">  </div>
-                                <div class="col col-md-2 text-center" style="border-left: solid 1px ">
+                                <div class="col col-md-2 text-center" style="border-left: 2px solid #aac7d6 ">
                                     <h6> {{ $answer->user->last_name }} {{ $answer->user->name }} </h6>
                                     <img class="img-thumbnail " style="border-radius: 50%;" src="{{ $answer->user->photo }} "
                                          alt="{{ $answer->user->name }} ">

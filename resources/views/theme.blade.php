@@ -36,7 +36,7 @@
                         <hr>
                         <form class="form-horizontal" id="addMessage">
                             @csrf
-                            <textarea onfocus="this.value=''" rows="1" class="form-control mb-3" type="text" id="message" name="message"
+                            <textarea onfocus="" rows="1" class="form-control mb-3" type="text" id="message" name="message"
                                       required></textarea>
                             <input type="hidden" id="theme_id" name="theme_id" value={{ $theme->id }} >
                             <button  type="submit" id="btnAddMessage" class="btn btn-md btn-my mb-3 float-right"
