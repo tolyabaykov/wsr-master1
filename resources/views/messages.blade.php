@@ -16,7 +16,7 @@
                                     <div class="row ml-1">
                                         <small>id: {{ $message->id }}</small>&nbsp&nbsp&nbsp&nbsp
                                         <small>Создано: {{date("d.m.Y",strtotime($message->created_at))}}</small>&nbsp&nbsp&nbsp&nbsp
-                                        <small id="">Изменено:</small>
+                                        <small id="changed">Изменено:</small>
                                     </div>
                                     <div class="row mt-4 ml-1" id="messages">
                                         {{ $message->message }}

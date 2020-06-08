@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events;
 use App\Message;
+use App\Notifications\AddToClosedTheme;
 use App\Notifications\NotiToAddManager;
 use App\Roles;
 use App\Status;
@@ -74,11 +75,13 @@ class HomeController extends Controller
                                 'user_id' => $user_id[$i],
                                 'theme_id' => $thema->id,
                             ]);
-//                            $user->notify(new AddClose($user));
+                            $user->notify(new AddToClosedTheme($user));
                         }
                         $i=$i+1;
                     }
-                }}
+                }
+            }
+
         }
 
 
