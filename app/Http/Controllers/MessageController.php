@@ -7,6 +7,7 @@ use App\Events;
 use App\Notifications\NotiAnswer;
 use App\Message;
 use App\Notifications\NotiToMessage;
+use App\Status;
 use App\Theme;
 use App\User;
 use Illuminate\Http\Request;
@@ -20,13 +21,16 @@ class MessageController extends Controller
 
     // Вывод сообщений
     public function showMessages(Request $request, $id)
-    {
+    {   $users = User::all();
+    $events = Events::all();
+    $statuses = Status::all();
         $theme = Theme::find($id);
+        $messags = Message::all();
         $messages = $theme->messages()->paginate(5);
         if ($request->ajax()) {
             return view('messages', compact('messages'));
         }
-        return view('theme', ['theme' => $theme, 'messages' => $messages]);
+        return view('theme', ['messags'=> $messags, 'users'=>$users,'statuses'=>$statuses,'events'=>$events,'theme' => $theme, 'messages' => $messages]);
 
     }
 

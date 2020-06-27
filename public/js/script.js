@@ -48,7 +48,7 @@ $(document).ready(function () {
         $(this).find('#date').val(old_date);
     });
 
-    $('#changed').hide();//скрытие надписи изменено
+    $('#changed').hide();//скрытие надписи "изменено"
     // TODO: при открытии модального окна редактирования сообщения
     $('#modal_04').on('show.bs.modal', function (message) {
         // получить кнопку, которая его открыло
@@ -67,7 +67,8 @@ $(document).ready(function () {
     //     $(this).find('#edit_message_form').attr('action',   id ); загвостка в пути для формы
         $(this).find('#message').val(old_message);
         // $(this).find('#date').val(old_date);
-        $('#changed').show();//отображение надписи
+       // $('#changed').show();//отображение надписи
+        
     });
 
 
@@ -201,12 +202,10 @@ function markNotificationAsRead(notificationCount) {
 
 
 //TODO:
+$('#btnAddMessage').click(function () {
 
-    $(function(){
-        $("#Edit").delay(5000).slideUp(200, function(){
-            $("#Edit").remove();
-        });
-    });
+    $("div#"+id_message).slideUp(60000);
+});
 
 
 

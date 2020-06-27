@@ -21,7 +21,7 @@
                             <div class="card-body">
                                 @if(count($themes)>0)
                                     @foreach($themes as $theme)
-                                        @if($theme->status==1)
+                                        @if($theme->status==1 || $theme->status == 2 )
                                         @if($theme->events_id ==  $event->id)
                                             <div class="row justify-content-center ">
                                                 <div class="col-md-12">
@@ -48,7 +48,7 @@
                                             </div>
                                         @endif
                                         @endif
-                                            @if($theme->status==3 )
+                                            @if($theme->status == 3 )
                                                 @foreach($theme_accesses as $theme_access)
                                                     @if($theme->events_id ==  $event->id && $theme->id == $theme_access->theme_id && (((auth()->user()->id==$theme_access->user_id) || (Auth::user()->is_admin == 1 ) || (($event->manager) ===  Auth::user()->id))))
 

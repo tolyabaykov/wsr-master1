@@ -33,15 +33,28 @@
                                     </div>
                                     <br>
                                     <div class="float-right">
-                                        <a href="#" data-toggle="modal" data-target="#modal_07" data-content="{{ $message}}" title="Ответить">
+                                        <a href="#" data-toggle="modal" data-target="#modal_07" data-content="
+{{--@foreach($messags as $messag)--}}
+                                        {{ $message }}
+{{--                                        @endforeach--}}
+                                            " title="Ответить">
                                             <i class="fa fa-reply text-secondary"></i>
                                         </a>
                                     </div><br>
 
-                                    <div class="float-right" id="Edit">
+                                    <div class="float-right" id="{{ $message->id }}">
+<script>
 
+    let id_message= {{$message->id}};
+    {{--let id_for= {{count($messages)}};--}}
+    // for(i=0; i<id_for.length; i++){
+
+        // alert(id_message);
+    // }
+</script>
                                         <a href="#" data-toggle="modal" data-target="#modal_04" data-content="{{ $message }}" title="Редактировать">
                                             <i class="fa fa-pencil-square-o text-secondary"></i>
+
                                         </a>
                                     </div>
                                 </div>
