@@ -23,7 +23,7 @@
                                     @foreach($themes as $theme)
                                         @if($theme->status==1 || $theme->status == 2 )
                                         @if($theme->events_id ==  $event->id)
-                                            <div class="row justify-content-center ">
+                                              <div class="row justify-content-center ">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <ul class="list-group">
