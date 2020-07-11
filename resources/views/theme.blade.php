@@ -39,8 +39,7 @@
                         <form class="form-horizontal" id="addMessage">
                             @csrf
                             @if (($theme->status==2 && ($theme->owner_id==auth()->user()->id || (Auth::user()->is_admin == 1))) || $theme->status==1 || $theme->status==3)
-                            <textarea onfocus="" rows="1" class="form-control mb-3" type="text" id="message" name="message"
-                                      required></textarea>
+                            <textarea  rows="1" class="form-control mb-3" type="text" id="message" name="message" required></textarea>
 
                             <input type="hidden" id="theme_id" name="theme_id" value={{ $theme->id }} >
 

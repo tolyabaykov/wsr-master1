@@ -45,7 +45,7 @@
                                     <div class="float-right" id="{{ $message->id }}">
 <script>
 
-    let id_message= {{$message->id}};
+    let id_message={{$message->id}};
     {{--let id_for= {{count($messages)}};--}}
     // for(i=0; i<id_for.length; i++){
 

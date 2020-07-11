@@ -68,7 +68,7 @@ $(document).ready(function () {
         $(this).find('#message').val(old_message);
         // $(this).find('#date').val(old_date);
        // $('#changed').show();//отображение надписи
-        
+
     });
 
 
@@ -202,10 +202,10 @@ function markNotificationAsRead(notificationCount) {
 
 
 //TODO:
-$('#btnAddMessage').click(function () {
-
-    $("div#"+id_message).slideUp(60000);
-});
+// $('#btnAddMessage').click(function () {
+//
+//     $("div#"+id_message).slideUp(60000);
+// });
 
 
 
